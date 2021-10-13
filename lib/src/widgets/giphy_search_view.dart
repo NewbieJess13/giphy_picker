@@ -59,10 +59,13 @@ class _GiphySearchViewState extends State<GiphySearchView> {
           children: [
             if (!giphyDecorator.showAppBar)
               InkWell(
-                child: Icon(
-                  FeatherIcons.arrowLeft,
-                  color: Colors.black45,
-                  size: 22,
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Icon(
+                    FeatherIcons.arrowLeft,
+                    color: Colors.black45,
+                    size: 22,
+                  ),
                 ),
                 onTap: () => Navigator.pop(context),
               ),
