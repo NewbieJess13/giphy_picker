@@ -55,31 +55,34 @@ class _GiphySearchViewState extends State<GiphySearchView> {
       Material(
         elevation: giphyDecorator.searchElevation,
         color: giphyDecorator.giphyTheme?.scaffoldBackgroundColor,
-        child: Row(
-          children: [
-            if (!giphyDecorator.showAppBar)
-              InkWell(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 10.0),
+          child: Row(
+            children: [
+              if (!giphyDecorator.showAppBar)
+                InkWell(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Icon(
+                      FeatherIcons.arrowLeft,
+                      color: Colors.black45,
+                      size: 22,
+                    ),
+                  ),
+                  onTap: () => Navigator.pop(context),
+                ),
+              Expanded(
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
-                  child: Icon(
-                    FeatherIcons.arrowLeft,
-                    color: Colors.black45,
-                    size: 22,
+                  padding: EdgeInsets.symmetric(horizontal: 10),
+                  child: TextField(
+                    controller: _textController,
+                    decoration: inputDecoration,
+                    onChanged: (value) => _delayedSearch(giphy, value),
                   ),
                 ),
-                onTap: () => Navigator.pop(context),
               ),
-            Expanded(
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 10),
-                child: TextField(
-                  controller: _textController,
-                  decoration: inputDecoration,
-                  onChanged: (value) => _delayedSearch(giphy, value),
-                ),
-              ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       Expanded(
