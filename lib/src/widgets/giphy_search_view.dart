@@ -60,7 +60,7 @@ class _GiphySearchViewState extends State<GiphySearchView> {
             if (!giphyDecorator.showAppBar)
               InkWell(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.symmetric(horizontal: 12.0),
                   child: Icon(
                     FeatherIcons.arrowLeft,
                     color: Colors.black45,
