@@ -98,7 +98,7 @@ class _GiphySearchViewState extends State<GiphySearchView> {
                 } else if (snapshot.hasError) {
                   return Center(child: Text('An error occurred'));
                 }
-                return Center(child: CircularProgressIndicator());
+                return Center(child: giphy.loadingIndicator);
               }))
     ]);
   }

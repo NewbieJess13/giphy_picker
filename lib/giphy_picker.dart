@@ -30,6 +30,7 @@ class GiphyPicker {
     GiphyDecorator? decorator,
     bool fullScreenDialog = true,
     String searchText = 'Search GIPHY',
+    Widget loadingIndicator = const CircularProgressIndicator(),
     GiphyPreviewType? previewType,
   }) async {
     GiphyGif? result;
@@ -48,6 +49,7 @@ class GiphyPicker {
           language: lang,
           sticker: sticker,
           onError: onError ?? (error) => _showErrorDialog(context, error),
+          loadingIndicator: loadingIndicator,
           onSelected: (gif) {
             result = gif;
             // pop preview page if necessary

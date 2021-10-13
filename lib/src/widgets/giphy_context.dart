@@ -16,6 +16,8 @@ class GiphyContext extends InheritedWidget {
   final String searchText;
   final GiphyPreviewType? previewType;
 
+  final Widget loadingIndicator;
+
   /// Debounce delay when searching
   final Duration searchDelay;
 
@@ -31,6 +33,7 @@ class GiphyContext extends InheritedWidget {
     this.showPreviewPage = true,
     this.searchText = 'Search Giphy',
     this.searchDelay = const Duration(milliseconds: 500),
+    this.loadingIndicator = const CircularProgressIndicator(),
     required this.decorator,
     this.previewType,
   }) : super(key: key, child: child);
