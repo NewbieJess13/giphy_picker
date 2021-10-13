@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:giphy_picker/src/model/giphy_repository.dart';
 import 'package:giphy_picker/src/utils/debouncer.dart';
 import 'package:giphy_picker/src/widgets/giphy_context.dart';
@@ -56,7 +57,15 @@ class _GiphySearchViewState extends State<GiphySearchView> {
         color: giphyDecorator.giphyTheme?.scaffoldBackgroundColor,
         child: Row(
           children: [
-            if (!giphyDecorator.showAppBar) BackButton(),
+            if (!giphyDecorator.showAppBar)
+              InkWell(
+                child: Icon(
+                  FeatherIcons.arrowLeft,
+                  color: Colors.black45,
+                  size: 22,
+                ),
+                onTap: () => Navigator.pop(context),
+              ),
             Expanded(
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10),
