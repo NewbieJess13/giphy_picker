@@ -71,6 +71,7 @@ class _GiphySearchViewState extends State<GiphySearchView> {
                   ),
                   onTap: () => Navigator.pop(context),
                 ),
+              Text('fdfdfd'),
               Expanded(
                 child: Padding(
                   padding: EdgeInsets.symmetric(horizontal: 10),
